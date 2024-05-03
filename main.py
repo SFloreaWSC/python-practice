@@ -1,7 +1,7 @@
 #var setting
 inst = 0
 temporary = 0
-
+points = 0
 #ask user's name
 print ("Hello, you.")
 name = input ("What is your name?") 
@@ -11,11 +11,20 @@ print (f"Nice to meet you, {name}")
 print ("I have a question for you.")
 
 #ask if they feel like they are being watched
-a1 = input ("Do you feel like you are being watched? A) Yes B) No")
-if a1 == "A" or a1 == "a":
-    print ("Congratulations, That was correct!")
+a0 = input ("Do you feel like you are being watched? A) Yes B) No")
+if a0 == "A" or "a" or "Yes" or "yes":
+    points = points + 1
+elif a0 == " " or a0 == "":
+    inst = inst + 1
+    print ("Please answer the question.")
+    a0 = input ("Do you feel like you are being watched? A) Yes B) No")
 else:
-    print ("I'm sorry, the correct answer was: Yes.")
+    points = points 
+    
+#question 1
+a1 = input ("temp")
+if a1 == "temp":
+    print("temp success")
 
 #INSERT CODE LAST QUESTION
 if temporary == 3:
@@ -27,11 +36,6 @@ if temporary == 3:
 
 
 #refuse to answer override
-if a1 == "" or a1 == " ":
-    inst = inst + 1
-    print ("Please answer the question.")
-    a1 = "dhaifjhvnkdfghnmvkdiuhfbnmgkfreifgubhfenjdifvobifjdebdfjiofdeidhfbgjfdiefjbnfdjij"
-    a1 = input ("Do you feel like you are being watched? A) Yes B) No")
-if a1 == "" or a1 == " " and inst == 1:
+if inst == 3:
     print ("We do not have time for insolence.")
     print ("Goodbye.")
