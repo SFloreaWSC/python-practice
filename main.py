@@ -10,7 +10,7 @@ name = input ("What is your name?")
 print (f"Nice to meet you, {name}.")
 print ("I have the questionnaire ready for you.")
 
-#ask if they feel like they are being watched
+#question 0
 ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n".lower())
 if ans == "" or ans == " ":
     inst = inst + 1
@@ -25,8 +25,8 @@ if ans == "" or ans == " ":
 
 if ans == "A".lower() or ans == "Very recently".lower():
     points = points + 1
+    print(f"{points}")
     
-print(points)
 #question 1
 ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n")
 if ans == "" or ans == " ":
@@ -46,12 +46,10 @@ if ans == "A" or ans == "a" or ans == "Yes" or ans == "yes":
 ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
 if ans == "" or ans == " ":
     inst = inst + 1
-    print ("INSERT \nA) X \nB) X\n")
-    ans = input ("INSERT \nA) X \nB) X\n")
+    ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
     if ans == "" or ans == " ":
         inst = inst + 1
-        print ("INSERT")
-        ans = input ("INSERT \nA) X \nB) X\n")
+        ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
         if ans == "" or ans == " ":
             inst = inst + 1
 if ans == "C" or ans == "c" or ans == "Wouldn't you" or ans == "wouldn't you":
