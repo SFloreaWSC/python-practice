@@ -114,16 +114,64 @@ else:
 ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
 if ans == "" or ans == " ":
     inst = inst + 1
-    print ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
-    ans = input ("INSERT \nA) X \nB) X\n")
+    ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
     if ans == "" or ans == " ":
         inst = inst + 1
-        print ("INSERT")
-        ans = input ("INSERT \nA) X \nB) X\n")
+        ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
         if ans == "" or ans == " ":
             inst = inst + 1
-if ans == "A" or ans == "a" or ans == "Yes" or ans == "yes":
+if ans == "C" or ans == "c" or ans == "I can't" or ans == "i can't":
     points = points + 1
     ans = "z"
 else:
     ans = "z"
+
+#question 7
+ans = input ("Do you regret the things you have done which did not serve the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
+if ans == "" or ans == " ":
+    inst = inst + 1
+    ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
+    if ans == "" or ans == " ":
+        inst = inst + 1
+        ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
+        if ans == "" or ans == " ":
+            inst = inst + 1
+if ans == "D" or ans == "d" or ans == "I won't" or ans == "i won't":
+    points = points + 1
+    ans = "z"
+else:
+    ans = "z"
+
+#question 8
+ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
+if ans == "" or ans == " ":
+    inst = inst + 1
+    ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
+    if ans == "" or ans == " ":
+        inst = inst + 1
+        ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
+        if ans == "" or ans == " ":
+            inst = inst + 1
+if ans == "B" or ans == "b" or ans == "I haven't" or ans == "i haven't":
+    points = points + 1
+    ans = "z"
+else:
+    ans = "z"
+
+#question 9
+ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
+if ans == "" or ans == " ":
+    inst = inst + 1
+    ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
+    if ans == "" or ans == " ":
+        inst = inst + 1
+        ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
+        if ans == "" or ans == " ":
+            inst = inst + 1
+if ans == "B" or ans == "b" or ans == "No" or ans == "no":
+    points = points + 1
+    ans = "z"
+else:
+    ans = "z"
+
+#END OF QUOESAIRIAIREEREE
