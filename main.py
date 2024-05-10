@@ -23,7 +23,6 @@ if ans == "" or ans == " ":
         ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n")
         if ans == "" or ans == " ":
             inst = inst + 1
-
 if ans == "A" or ans == "a" or ans == "Very recently" or ans == "very recently":
     points = points + 1
     ans = "z"
@@ -34,9 +33,11 @@ else:
 ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -50,9 +51,11 @@ else:
 ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -66,9 +69,11 @@ else:
 ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No \nC) I am being watched\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No\nC) I am being watched\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No\nC) I am being watched\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -79,12 +84,14 @@ else:
     ans = "z"
 
 #question 4
-ans = input ("How often do you feel like life is meaningless?")
+ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -98,9 +105,11 @@ else:
 ans = input ("If you went missing, is there anyone who would miss you? \nA) Yes \nB) No\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("If you went missing, is there anyone who would miss you? \nA) Yes \nB) No\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("If you went missing, is there anyone who would miss you? \nA) Yes \nB) No\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -114,9 +123,11 @@ else:
 ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -130,9 +141,11 @@ else:
 ans = input ("Do you regret the things you have done which did not serve the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -146,9 +159,11 @@ else:
 ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -162,9 +177,11 @@ else:
 ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
 if ans == "" or ans == " ":
     inst = inst + 1
+    print ("Please answer the question.")
     ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
     if ans == "" or ans == " ":
         inst = inst + 1
+        print ("Please answer the question.")
         ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n")
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -174,4 +191,23 @@ if ans == "B" or ans == "b" or ans == "No" or ans == "no":
 else:
     ans = "z"
 
+if inst > 2:
+    print("We do not have time for insolence.")
+    print(f"Goodbye, {name}.")
 #END OF QUOESAIRIAIREEREE
+if inst == 0:
+    print("Thank you for answering all of our questions.")
+    print(points)
+elif inst == 1 or inst == 2:
+    print("Thank you for, mostly, answering all the questions.")
+#override
+
+#points
+    print("a")
+if points >= 4 and points <= 9:
+    print("b")
+if points == 10:
+    print("c")
+if points > 10:
+    print("???")
+
