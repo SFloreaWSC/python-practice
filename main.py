@@ -5,6 +5,7 @@ while replay == "yes":
     inst = 0
     temporary = 0
     points = 0
+    re = 1
 
     #ask user's name
     print ("Hello, you.")
@@ -28,7 +29,7 @@ while replay == "yes":
                 inst = inst + 1
     if ans == "a" or ans == "very recently":
         points = points + 1
-        print(points)
+
         ans = "z"
     else:
         ans = "z"   
@@ -205,6 +206,7 @@ while replay == "yes":
         print("Thank you for answering all of our questions.")
     elif inst == 1 or inst == 2:
         print("Thank you for, for the most part, answering all our questions.")
+
     #points
     if points < 4:
         print("This data will be useful moving forward in out endeavors,")
@@ -213,17 +215,19 @@ while replay == "yes":
     if points >= 4 and points <= 9:
         print("Nicely done, you have been placed on a waiting list.")
         print("If you are picked, we will contact you, do not try and contact us.")
-        print(f"Thank you, {name}")
+        print(f"Thank you, {name}.")
         re = 1
     if points == 10:
         print("Well done, you are in the 99th percentile of participants.")
         print("Members of our corporation have been dispatched, please refrain from exiting the premises.")
-        print(f"Thank you, {name}")
-        re = 1
+        print(f"Thank you, {name}.")
+        re = 0
+        replay = "no"
     if points > 10:
         print("Please do not go anywhere, BAASA associates will be arriving soon.")
         print("Do not be alarmed. Do not leave. Do not resist.")
-        print("ESA")
+        re = 0
+        replay = "no"
     
     while re == 1:
         replaie = input("If you would like to sumbit another questionnaire, please state so now. \n1) Yes\n2) No\n").lower()
