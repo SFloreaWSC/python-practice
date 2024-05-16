@@ -6,6 +6,7 @@ while replay == "yes":
     temporary = 0
     points = 0
     re = 1
+    ques = 0
 
     #ask user's name
     print ("Hello, you.")
@@ -13,44 +14,56 @@ while replay == "yes":
 
     #greet user using name
     print (f"Nice to meet you, {name}.")
+    while True:
+        try:
+            chance = input("How many chances would you like to answer each question? Choose a number from 1 to 3")
+            chance = int(chance)
+            break
+        except:
+            print("Please enter a number.")
+
+
     print ("The questionnaire is ready for your participation.")
 
     #question 0
-    ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
-    if ans == "" or ans == " ":
-        inst = inst + 1
-        print ("Please answer the question.")
+    while ques == 0:
         ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             print ("Please answer the question.")
             ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
-            if ans == "" or ans == " ":
-                inst = inst + 1
-    if ans == "a" or ans == "very recently":
-        points = points + 1
-
-        ans = "z"
-    else:
-        ans = "z"   
+            if inst == {chance}:
+                print("We do not have time for insolence.")
+                print(f"Goodbye, {name}.")
+                replay == "no"
+                while True:
+                    ques = "x"
+        if ans == "a" or ans == "very recently":
+            points = points + 1
+            ans = "z"
+            ques = 1
+        else:
+            ans = "z" 
+            ques = 1  
 
     #question 1
-    ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) No\nC) Who can say\n").lower()
-    if ans == "" or ans == " ":
-        inst = inst + 1
-        print ("Please answer the question.")
-        ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n").lower()
+    while ques == 1:
+        ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) No\nC) Who can say\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             print ("Please answer the question.")
             ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "c" or ans == "who can say":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
+                print ("Please answer the question.")
+                ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "c" or ans == "who can say":
+            points = points + 1
+            ans = "z"
+        else:
+            ans = "z"
 
     #question 2
     ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n").lower()
@@ -198,10 +211,7 @@ while replay == "yes":
 
     #end of questionnaire
     #override
-    while replay == "yes" and inst > 2:
-        print("We do not have time for insolence.")
-        print(f"Goodbye, {name}.")
-        replay == "no"
+
     if inst == 0:
         print("Thank you for answering all of our questions.")
     elif inst == 1 or inst == 2:
