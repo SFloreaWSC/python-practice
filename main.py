@@ -16,7 +16,7 @@ while replay == "yes":
     print (f"Nice to meet you, {name}.")
     while True:
         try:
-            chance = input("How many chances would you like to answer each question? Choose a number from 1 to 3")
+            chance = input("How many chances would you like to answer questions? Choose a number from 1 to 3")
             chance = int(chance)
             break
         except:
@@ -26,19 +26,18 @@ while replay == "yes":
     print ("The questionnaire is ready for your participation.")
 
     #question 0
-    while ques == 0:
+    while chance > 0:
         ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            print ("Please answer the question.")
-            ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
-            if inst == {chance}:
+            chance = chance - 1
+            while chance <= 0:
                 print("We do not have time for insolence.")
                 print(f"Goodbye, {name}.")
                 replay == "no"
                 while True:
                     ques = "x"
-        if ans == "a" or ans == "very recently":
+        elif ans == "a" or ans == "very recently":
             points = points + 1
             ans = "z"
             ques = 1
