@@ -1,4 +1,5 @@
-import: {}random
+import random
+
 replay = "yes"
 while replay == "yes":
     #setting
@@ -14,16 +15,16 @@ while replay == "yes":
     print (f"Nice to meet you, {name}.")
     while True:
         try:
-            chance = input("How many chances would you like to answer questions? Choose a number from 1 to 3")
+            chance = input("How many chances would you like to answer questions? \nChoose a number from 1 to 3\n")
             chance = int(chance)
-            break
+            if chance > 0 and chance <= 3:
                 break
+            if chance == 0 or chance > 3:
+                print("Please enter a valid numerical value.")    
         except:
-            print("Please enter a number.")
-
+            print("Please enter a valid numerical value.")
     tries = chance
     print ("The questionnaire is ready for your participation.")
-
     #question 0
     while tries > 0:
         ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
@@ -39,53 +40,52 @@ while replay == "yes":
         elif ans == "a" or ans == "very recently":
             points = points + 1
             ans = "z"
+            break
         else:
             ans = "z" 
-            ques = 1  
+            break
+    tries = chance
     #question 1
     while tries > 0:
         ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) No\nC) Who can say\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            print ("Please answer the question.")
-            ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n").lower()
-            if ans == "" or ans == " ":
-                inst = inst + 1
-                print ("Please answer the question.")
-                ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) Who can say\nC) No\n").lower()
-                if ans == "" or ans == " ":
-                    inst = inst + 1
+            chance = chance - 1
+            while chance <= 0:
+                print("We do not have time for insolence.")
+                print(f"Goodbye, {name}.")
                 replay == "no"
                 while True:
                     ques = "x"
         if ans == "c" or ans == "who can say":
             points = points + 1
             ans = "z"
+            break
         else:
             ans = "z"
+            break
+    tries = chance
     #question 2
-    ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n").lower()
-    if ans == "" or ans == " ":
     while tries > 0:
         ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            print ("Please answer the question.")
-            ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n").lower()
-            if ans == "" or ans == " ":
-                inst = inst + 1
-    if ans == "c" or ans == "wouldn't you":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+            chance = chance - 1
+            while chance <= 0:
+                print("We do not have time for insolence.")
+                print(f"Goodbye, {name}.")
+                replay == "no"
+                while True:
+                    ques = "x"
+        if ans == "c" or ans == "wouldn't you":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 3
-    ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No \nC) I am being watched\n").lower()
-    if ans == "" or ans == " ":
-        inst = inst + 1
-        print ("Please answer the question.")
     while tries > 0:
         ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No \nC) I am being watched\n").lower()
         if ans == "" or ans == " ":
@@ -94,16 +94,19 @@ while replay == "yes":
             ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No\nC) I am being watched\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "c" or ans == "i am being watched":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No\nC) I am being watched\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "c" or ans == "i am being watched":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 4
-    ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n").lower()
-    if ans == "" or ans == " ":
     while tries > 0:
         ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n").lower()
         if ans == "" or ans == " ":
@@ -112,18 +115,19 @@ while replay == "yes":
             ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "b" or ans == "occasionally":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "b" or ans == "occasionally":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 5
-    ans = input ("If you went missing, is there anyone who would miss you? \nA) There isn't \nB) There is\n").lower()
-    if ans == "" or ans == " ":
-        inst = inst + 1
-        print ("Please answer the question.")
     while tries > 0:
         ans = input ("If you went missing, is there anyone who would miss you? \nA) There isn't \nB) There is\n").lower()
         if ans == "" or ans == " ":
@@ -132,16 +136,19 @@ while replay == "yes":
             ans = input ("If you went missing, is there anyone who would miss you? \nA) Yes \nB) No\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "a" or ans == "there isn't":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("If you went missing, is there anyone who would miss you? \nA) Yes \nB) No\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "a" or ans == "there isn't":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 6
-    ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
-    if ans == "" or ans == " ":
     while tries > 0:
         ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
         if ans == "" or ans == " ":
@@ -150,18 +157,19 @@ while replay == "yes":
             ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "c" or ans == "i can't":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "c" or ans == "i can't":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 7
-    ans = input ("Do you regret the things you have done which did not serve the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
-    if ans == "" or ans == " ":
-        inst = inst + 1
-        print ("Please answer the question.")
     while tries > 0:
         ans = input ("Do you regret the things you have done which did not serve the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
         if ans == "" or ans == " ":
@@ -170,16 +178,19 @@ while replay == "yes":
             ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "d" or ans == "i won't":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "d" or ans == "i won't":
+            points = points + 1
             ans = "z"
+            break
+        else:
+            ans = "z"
+            break
+    tries = chance
     #question 8
-    ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n").lower()
-    if ans == "" or ans == " ":
     while tries > 0:
         ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n").lower()
         if ans == "" or ans == " ":
@@ -188,16 +199,19 @@ while replay == "yes":
             ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "b" or ans == "i haven't":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "b" or ans == "i haven't":
+            points = points + 1
+            ans = "z"
+            break
+        else:
             ans = "z" 
+            break
+    tries = chance
     #question 9
-    ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n").lower()
-    if ans == "" or ans == " ":
     while tries > 0:
         ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n").lower()
         if ans == "" or ans == " ":
@@ -206,13 +220,17 @@ while replay == "yes":
             ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n").lower()
             if ans == "" or ans == " ":
                 inst = inst + 1
-    if ans == "b" or ans == "no":
-        points = points + 1
-        ans = "z"
-    else:
-        ans = "z"
-
+                print ("Please answer the question.")
+                ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n").lower()
+                if ans == "" or ans == " ":
+                    inst = inst + 1
+        if ans == "b" or ans == "no":
+            points = points + 1
+            ans = "z"
+            break
         else:
+            ans = "z"
+            break
     #end of questionnaire
     if inst == 0:
         print("Thank you for answering all of our questions.")
