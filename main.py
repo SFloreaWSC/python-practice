@@ -1,5 +1,4 @@
 import random
-
 replay = "yes"
 while replay == "yes":
     #setting
