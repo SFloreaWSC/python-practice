@@ -229,11 +229,11 @@ while replay == "yes":
     else:
         print("Thank you for, for the most part, answering all our questions.")
     #points
-    if points < 4:
-        print("This data will be useful moving forward in out endeavors,")
+    if points <= 4:
+        print("This data will be useful moving forward in out endeavors.")
         print(f"Goodbye, {name}.")
         re = 1
-    if points >= 4 and points <= 9:
+    if points > 4 and points <= 9:
         print("Nicely done, you have been placed on a waiting list.")
         print("If you are picked, we will contact you, do not try and contact us.")
         print(f"Thank you, {name}.")
@@ -255,7 +255,7 @@ while replay == "yes":
         if replaie == "1" or replaie == "yes":
             replay = "yes"
             re = 0
-        elif replaie == "2" or replaie == "no":
+        if replaie == "2" or replaie == "no":
             print("Goodbye.")
             replay = "no"
             re = 0
