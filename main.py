@@ -183,7 +183,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "a" or ans == "there isn't":
+        elif ans == "b" or ans == "there isn't":
             points += 1
             print(random.choice(PROTON))
             break
@@ -290,7 +290,6 @@ while replay == "yes":
     #points
     if points <= 4:
         print("This data will be useful moving forward in out endeavors.")
-        print(f"Goodbye, {name}.")
         re = 1
     if points > 4 and points <= 9:
         print("Nicely done, you have been placed on a waiting list.")
