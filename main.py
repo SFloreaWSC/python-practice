@@ -1,31 +1,59 @@
 import random
-
+#question format
 FORMATTWO = "{}\nA){}\nB){}\n"
 FORMATTHREE = "{}\nA){}\nB){}\nC){}\n"
 FORMATFOUR = "{}\nA){}\nB){}\nC){}\nD){}\n"
+#lists
+#responses
+PROTON = ["Interesting.","Hmm.", "If you say so."]
+ELECTRON = ["Hmm...", "Oh.", "Wow."]
+#questions
+QUESTIONS = ["When did you last do something bad?",
+            "Do you think that you are a good person at heart?",
+            "Would you steal 100,000 of untraceable cash from a man on his deathbed?",
+            "Do you feel like you are being watched?",
+            "How often do you feel like life is meaningless?",
+            "If you went missing, is there anyone who would miss you?",
+            "Do you regret the things you have done which you believe were for the ‘greater good’?",
+            "Do you regret the things you have done which were not in the name of the ‘greater good’?",
+            "Have you declared your participation in this questionnaire to anyone?",
+            "Would anyone investigate if you suddenly were declared as missing?"]
+
+#answers
+OPTIONS = [["Very recently", "Recently", "Not recently", "Never"],
+           ["Yes", "No", "Who can say"],
+           ["Yes", "No", "Wouldn't you?"],
+           ["Yes", "no", "I am being watched"],
+           ["Frequently", "Occasionally", "Rarely", "Never"],
+           ["There is", "There isn't"],
+           ["I do", "I don't", "I can't", "I won't"],
+           ["I do", "I don't", "I can't", "I won't"],
+           ["I have", "I haven't"],
+           ["Yes", "No"]]
 
 replay = "yes"
+
+#ask user's name
+print ("Hello.")
+name = input ("Please input your name\n")
+
+#greet user using name
+print (f"Nice to meet you, {name}.")
+while True:
+    try:
+        chance = input("How many chances would you like to answer questions? \nChoose a number from 1 to 3\n")
+        chance = int(chance)
+        if chance > 0 and chance <= 3:
+            break
+        if chance == 0 or chance > 3:
+            print("Please enter a valid numerical value.")    
+    except:
+        print("Please enter a valid numerical value.")
 while replay == "yes":
     #setting
     inst = 0
     points = 0
     re = 1
-    #ask user's name
-    print ("Hello.")
-    name = input ("Please input your name")
-
-    #greet user using name
-    print (f"Nice to meet you, {name}.")
-    while True:
-        try:
-            chance = input("How many chances would you like to answer questions? \nChoose a number from 1 to 3\n")
-            chance = int(chance)
-            if chance > 0 and chance <= 3:
-                break
-            if chance == 0 or chance > 3:
-                print("Please enter a valid numerical value.")    
-        except:
-            print("Please enter a valid numerical value.")
     tries = chance
     print ("The questionnaire is ready for your participation.")
     #question 0
@@ -36,21 +64,21 @@ while replay == "yes":
         c = "Not recently"
         d = "Never"
         ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            tries = tries - 1
-            while tries == 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
+            inst += 1
+            tries -= 1
         elif ans == "a" or ans == "very recently":
             points += 1
+            print(random.choice(PROTON))
             break
-        else: 
-            print("duck")
+        else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 1
     while tries > 0:
@@ -59,20 +87,21 @@ while replay == "yes":
         b = "No"
         c = "Who can say"
         ans = input (FORMATTHREE.format(question, a, b, c)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            tries = tries - 1
-            while tries <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "c" or ans == "who can say":
+            inst += 1
+            tries -= 1
+        elif ans == "c" or ans == "who can say":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 2
     while tries > 0:
@@ -81,20 +110,21 @@ while replay == "yes":
         b = "No"
         c = "Wouldn't you?"
         ans = input (FORMATTHREE.format(question, a, b, c)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            tries = tries - 1
-            while tries <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "c" or ans == "wouldn't you":
+            inst += 1
+            tries -= 1
+        elif ans == "c" or ans == "wouldn't you":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 3
     while tries > 0:
@@ -103,21 +133,21 @@ while replay == "yes":
         b = "No"
         c = "I am being watched"
         ans = input (FORMATTHREE.format(question, a, b, c)).lower()
-        ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No \nC) I am being watched\n").lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "c" or ans == "i am being watched":
+            inst += 1
+            tries -= 1
+        elif ans == "c" or ans == "i am being watched":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 4
     while tries > 0:
@@ -127,20 +157,21 @@ while replay == "yes":
         c = "Rarely"
         d = "Never"
         ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "b" or ans == "occasionally":
+            inst += 1
+            tries -= 1
+        elif ans == "b" or ans == "occasionally":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 5
     while tries > 0:
@@ -148,20 +179,21 @@ while replay == "yes":
         a = "There is"
         b = "There isn't"
         ans = input (FORMATTWO.format(question, a, b)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "a" or ans == "there isn't":
+            inst += 1
+            tries -= 1
+        elif ans == "a" or ans == "there isn't":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 6
     while tries > 0:
@@ -171,20 +203,21 @@ while replay == "yes":
         c = "I can't"
         d = "I won't"
         ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "c" or ans == "i can't":
+            inst += 1
+            tries -= 1
+        elif ans == "c" or ans == "i can't":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 7
     while tries > 0:
@@ -194,20 +227,21 @@ while replay == "yes":
         c = "I can't"
         d = "I won't"
         ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "d" or ans == "i won't":
+            inst += 1
+            tries -= 1
+        elif ans == "d" or ans == "i won't":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 8
     while tries > 0:
@@ -215,20 +249,21 @@ while replay == "yes":
         a = "I have"
         b = "I haven't"
         ans = input (FORMATTWO.format(question, a, b)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "b" or ans == "i haven't":
+            inst += 1
+            tries -= 1
+        elif ans == "b" or ans == "i haven't":
             points += 1
+            print(random.choice(PROTON))
             break
-        else: 
+        else:
+            print(random.choice(ELECTRON))
             break
+    while tries <= 0:
+        print("We do not have time for insolence.\nGoodbye.")
+        while True:
+            True
     tries = chance
     #question 9
     while tries > 0:
@@ -236,19 +271,16 @@ while replay == "yes":
         a = "Yes"
         b = "No"
         ans = input (FORMATTWO.format(question, a, b)).lower()
+        #check
         if ans == "" or ans == " ":
-            inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
-                print("We do not have time for insolence.")
-                print(f"Goodbye, {name}.")
-                replay == "no"
-                while True:
-                    ques = "x"
-        if ans == "b" or ans == "no":
+            inst += 1
+            tries -= 1
+        elif ans == "b" or ans == "no":
             points += 1
+            print(random.choice(PROTON))
             break
         else:
+            print(random.choice(ELECTRON))
             break
     #end of questionnaire
     if inst == 0:
