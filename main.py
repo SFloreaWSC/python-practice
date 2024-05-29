@@ -1,11 +1,15 @@
 import random
+
+FORMATTWO = "{}\nA){}\nB){}\n"
+FORMATTHREE = "{}\nA){}\nB){}\nC){}\n"
+FORMATFOUR = "{}\nA){}\nB){}\nC){}\nD){}\n"
+
 replay = "yes"
 while replay == "yes":
     #setting
     inst = 0
     points = 0
     re = 1
-    ques = 0
     #ask user's name
     print ("Hello.")
     name = input ("Please input your name")
@@ -26,66 +30,79 @@ while replay == "yes":
     print ("The questionnaire is ready for your participation.")
     #question 0
     while tries > 0:
-        ans = input ("When did you last do something bad? \nA) Very recently \nB) Recently\nC) Not recently\nD) Never\n").lower()
+        question = "When did you last do something bad?"
+        a = "Very recently"
+        b = "Recently"
+        c = "Not recently"
+        d = "Never"
+        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
+            tries = tries - 1
+            while tries == 0:
                 print("We do not have time for insolence.")
                 print(f"Goodbye, {name}.")
                 replay == "no"
                 while True:
                     ques = "x"
         elif ans == "a" or ans == "very recently":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
-        else:
-            ans = "z" 
+        else: 
+            print("duck")
             break
     tries = chance
     #question 1
     while tries > 0:
-        ans = input ("Do you think that you are a good person at heart? \nA) Yes \nB) No\nC) Who can say\n").lower()
+        question = "Do you think that you are a good person at heart?"
+        a = "Yes"
+        b = "No"
+        c = "Who can say"
+        ans = input (FORMATTHREE.format(question, a, b, c)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
+            tries = tries - 1
+            while tries <= 0:
                 print("We do not have time for insolence.")
                 print(f"Goodbye, {name}.")
                 replay == "no"
                 while True:
                     ques = "x"
         if ans == "c" or ans == "who can say":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 2
     while tries > 0:
-        ans = input ("Would you steal 100,000 of untraceable cash from a man on his deathbed? \nA)Yes \nB)No \nC)Wouldn't you\n").lower()
+        question = "Would you steal 100,000 of untraceable cash from a man on his deathbed?"
+        a = "Yes"
+        b = "No"
+        c = "Wouldn't you?"
+        ans = input (FORMATTHREE.format(question, a, b, c)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
-            chance = chance - 1
-            while chance <= 0:
+            tries = tries - 1
+            while tries <= 0:
                 print("We do not have time for insolence.")
                 print(f"Goodbye, {name}.")
                 replay == "no"
                 while True:
                     ques = "x"
         if ans == "c" or ans == "wouldn't you":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 3
     while tries > 0:
+        question = "Do you feel like you are being watched?"
+        a = "Yes"
+        b = "No"
+        c = "I am being watched"
+        ans = input (FORMATTHREE.format(question, a, b, c)).lower()
         ans = input ("Do you feel like you are being watched? \nA) Yes \nB) No \nC) I am being watched\n").lower()
         if ans == "" or ans == " ":
             inst = inst + 1
@@ -97,16 +114,19 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "c" or ans == "i am being watched":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 4
     while tries > 0:
-        ans = input ("How often do you feel like life is meaningless? \nA) Frequently \nB) Occasionally \nC) Rarely \nD) Never\n").lower()
+        question = "How often do you feel like life is meaningless?"
+        a = "Frequently"
+        b = "Occasionally"
+        c = "Rarely"
+        d = "Never"
+        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -117,16 +137,17 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "b" or ans == "occasionally":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 5
     while tries > 0:
-        ans = input ("If you went missing, is there anyone who would miss you? \nA) There isn't \nB) There is\n").lower()
+        question = "If you went missing, is there anyone who would miss you?"
+        a = "There is"
+        b = "There isn't"
+        ans = input (FORMATTWO.format(question, a, b)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -137,16 +158,19 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "a" or ans == "there isn't":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 6
     while tries > 0:
-        ans = input ("Do you regret the things you have done which you believe served the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
+        question = "Do you regret the things you have done which you believe served the ‘greater good’?"
+        a = "I do"
+        b = "I don't"
+        c = "I can't"
+        d = "I won't"
+        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -157,16 +181,19 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "c" or ans == "i can't":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 7
     while tries > 0:
-        ans = input ("Do you regret the things you have done which did not serve the ‘greater good’? \nA) I do\nB) I don't\nC) I can't\nD) I won't\n").lower()
+        question = "Do you regret the things you have done which did not serve the ‘greater good’?"
+        a = "I do"
+        b = "I don't"
+        c = "I can't"
+        d = "I won't"
+        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -177,16 +204,17 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "d" or ans == "i won't":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     tries = chance
     #question 8
     while tries > 0:
-        ans = input ("Have you declared your participation in this questionnaire to anyone? \nA) I have\nB) I haven't\n").lower()
+        question = "Have you declared your participation in this questionnaire to anyone?"
+        a = "I have"
+        b = "I haven't"
+        ans = input (FORMATTWO.format(question, a, b)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -197,16 +225,17 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "b" or ans == "i haven't":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
-        else:
-            ans = "z" 
+        else: 
             break
     tries = chance
     #question 9
     while tries > 0:
-        ans = input ("Would anyone investigate if you suddenly were declared as missing? \nA) Yes\nB) No\n").lower()
+        question = "Would anyone investigate if you suddenly were declared as missing?"
+        a = "Yes"
+        b = "No"
+        ans = input (FORMATTWO.format(question, a, b)).lower()
         if ans == "" or ans == " ":
             inst = inst + 1
             chance = chance - 1
@@ -217,11 +246,9 @@ while replay == "yes":
                 while True:
                     ques = "x"
         if ans == "b" or ans == "no":
-            points = points + 1
-            ans = "z"
+            points += 1
             break
         else:
-            ans = "z"
             break
     #end of questionnaire
     if inst == 0:
