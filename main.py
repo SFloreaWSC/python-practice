@@ -3,11 +3,12 @@ import random
 FORMATTWO = "{}\nA){}\nB){}\n"
 FORMATTHREE = "{}\nA){}\nB){}\nC){}\n"
 FORMATFOUR = "{}\nA){}\nB){}\nC){}\nD){}\n"
+
 #lists
-#responses
+#---responses
 PROTON = ["Interesting.","Hmm.", "If you say so."]
 ELECTRON = ["Hmm...", "Oh.", "Wow."]
-#questions
+#---questions
 QUESTIONS = ["When did you last do something bad?",
             "Do you think that you are a good person at heart?",
             "Would you steal 100,000 of untraceable cash from a man on his deathbed?",
@@ -18,8 +19,7 @@ QUESTIONS = ["When did you last do something bad?",
             "Do you regret the things you have done which were not in the name of the ‘greater good’?",
             "Have you declared your participation in this questionnaire to anyone?",
             "Would anyone investigate if you suddenly were declared as missing?"]
-
-#answers
+#---answers
 OPTIONS = [["Very recently", "Recently", "Not recently", "Never"],
            ["Yes", "No", "Who can say"],
            ["Yes", "No", "Wouldn't you?"],
@@ -45,7 +45,7 @@ while True:
         chance = int(chance)
         if chance > 0 and chance <= 3:
             break
-        if chance == 0 or chance > 3:
+        else:
             print("Please enter a valid numerical value.")    
     except:
         print("Please enter a valid numerical value.")
@@ -68,13 +68,17 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "a" or ans == "very recently":
+        elif ans == "a" or ans == a.lower():
             points += 1
             print(random.choice(PROTON))
             break
-        else:
+        elif ans == "b" or ans == b.lower() or ans == "c" or ans == c.lower() or ans == "d" or ans == d.lower():
             print(random.choice(ELECTRON))
             break
+        else:
+            print("Please answer the question seriously.")
+            inst -= 1
+            tries -= 1
     while tries <= 0:
         print("We do not have time for insolence.\nGoodbye.")
         while True:
@@ -91,13 +95,17 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "c" or ans == "who can say":
+        elif ans == "c" or ans == c.lower():
             points += 1
             print(random.choice(PROTON))
             break
-        else:
+        elif ans == "a" or ans == a.lower() or ans == "b" or ans == b.lower():
             print(random.choice(ELECTRON))
             break
+        else:
+            print("Please answer the question seriously.")
+            inst -= 1
+            tries -= 1
     while tries <= 0:
         print("We do not have time for insolence.\nGoodbye.")
         while True:
@@ -114,7 +122,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "c" or ans == "wouldn't you":
+        elif ans == "c" or ans == c.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -137,7 +145,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "c" or ans == "i am being watched":
+        elif ans == "c" or ans == c.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -161,7 +169,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "b" or ans == "occasionally":
+        elif ans == "b" or ans == b.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -183,7 +191,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "b" or ans == "there isn't":
+        elif ans == "b" or ans == b.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -207,7 +215,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "c" or ans == "i can't":
+        elif ans == "c" or ans == c.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -231,7 +239,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "d" or ans == "i won't":
+        elif ans == "d" or ans == d.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -253,7 +261,7 @@ while replay == "yes":
         if ans == "" or ans == " ":
             inst += 1
             tries -= 1
-        elif ans == "b" or ans == "i haven't":
+        elif ans == "b" or ans == b.lower():
             points += 1
             print(random.choice(PROTON))
             break
@@ -274,8 +282,9 @@ while replay == "yes":
         #check
         if ans == "" or ans == " ":
             inst += 1
-            tries -= 1
-        elif ans == "b" or ans == "no":
+            tries -= 1           
+            print("   ) ] }         ")
+        elif ans == "b" or ans == b.lower():
             points += 1
             print(random.choice(PROTON))
             break
