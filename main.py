@@ -63,7 +63,7 @@ while replay == "yes":
         b = "Recently"
         c = "Not recently"
         d = "Never"
-        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
+        ans = input ({FORMATFOUR.format(question, a, b, c ,d)}).lower()
         #check
         if ans == "" or ans == " ":
             inst += 1
@@ -282,8 +282,7 @@ while replay == "yes":
         #check
         if ans == "" or ans == " ":
             inst += 1
-            tries -= 1           
-            print("   ) ] }         ")
+            tries -= 1 
         elif ans == "b" or ans == b.lower():
             points += 1
             print(random.choice(PROTON))
