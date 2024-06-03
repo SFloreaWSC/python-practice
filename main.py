@@ -63,7 +63,7 @@ while replay == "yes":
         b = "Recently"
         c = "Not recently"
         d = "Never"
-        ans = input ({FORMATFOUR.format(question, a, b, c ,d)}).lower()
+        ans = input (FORMATFOUR.format(question, a, b, c ,d)).lower()
         #check
         if ans == "" or ans == " ":
             inst += 1
