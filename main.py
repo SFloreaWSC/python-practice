@@ -19,7 +19,7 @@ QUESTIONS = ["When did you last do something bad?",
             "Do you regret the things you have done which were not in the name of the ‘greater good’?",
             "Have you declared your participation in this questionnaire to anyone?",
             "Would anyone investigate if you suddenly were declared as missing?"]
-#---answers
+#---
 OPTIONS = [["Very recently", "Recently", "Not recently", "Never"],
            ["Yes", "No", "Who can say"],
            ["Yes", "No", "Wouldn't you?"],
@@ -30,6 +30,19 @@ OPTIONS = [["Very recently", "Recently", "Not recently", "Never"],
            ["I do", "I don't", "I can't", "I won't"],
            ["I have", "I haven't"],
            ["Yes", "No"]]
+#---
+SHORTOPT = [["a", "b", "c", "d"],
+            ["a", "b", "c"],
+            ["a", "b", "c"],
+            ["a", "b", "c"],
+            ["a", "b", "c", "d"],
+            ["a", "b"],
+            ["a", "b", "c", "d"],
+            ["a", "b", "c", "d"],
+            ["a", "b"],
+            ["a", "b"]]
+#---
+ANSWERS = [[0, 2, 2, 2, 1, 1, 2, 3, 1, 1]]
 
 replay = "yes"
 
@@ -56,6 +69,17 @@ while replay == "yes":
     re = 1
     tries = chance
     print ("The questionnaire is ready for your participation.")
+
+
+
+
+    answer = input (FORMATTHREE.format(QUESTIONS[0], OPTIONS[0][0], OPTIONS[0][1], OPTIONS[0][2], OPTIONS[0][3])).lower()
+    if answer == OPTIONS[0][ANSWERS[0]] or answer == SHORTOPT[ANSWERS[0]]:
+
+
+
+
+
     #question 0
     while tries > 0:
         question = "When did you last do something bad?"
@@ -83,7 +107,7 @@ while replay == "yes":
         print("We do not have time for insolence.\nGoodbye.")
         while True:
             True
-    tries = chance
+    tries = chance    
     #question 1
     while tries > 0:
         question = "Do you think that you are a good person at heart?"
