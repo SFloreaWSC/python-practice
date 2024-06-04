@@ -1,4 +1,4 @@
-HIGHEST_IMDB_ANSWER = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Shindler's List", "The Lord of the Rings: The Return of the King", "12 Angry Men", "The Godfather Part 2", "Pulp Fiction", "The Lord of the Rings: The Fellowship of the Ring", "12th Fail"]
+HIGHEST_IMDB_ANSWER = ["the shawshank redemption", "the Godfather", "the dark knight", "shindler's list", "the lord of the rings: the return of the king", "12 angry men", "the godfather part 2", "pulp fiction", "the lord of the rings: the fellowship of the ring", "12th fail"]
 guess = []
 #---------------- FUNCTIONS ----------------
 

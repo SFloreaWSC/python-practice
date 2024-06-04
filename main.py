@@ -315,7 +315,7 @@ while replay == "yes":
         print("Do not be alarmed. Do not leave. Do not resist.")
         re = 0
         replay = "no"
-    
+
     while re == 1:
         replaie = input("If you would like to sumbit another questionnaire, please state so now. \n1) Yes\n2) No\n").lower()
         if replaie == "1" or replaie == "yes":
@@ -325,3 +325,4 @@ while replay == "yes":
             print("Goodbye.")
             replay = "no"
             re = 0
+            
